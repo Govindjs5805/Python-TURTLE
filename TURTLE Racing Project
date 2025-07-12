@@ -1,0 +1,80 @@
+import turtle
+import random
+screen = turtle.Screen()
+screen.setup(500,400)
+screen.bgcolor("black")
+user_bet = screen.textinput("Make your bet","Who is going to win the race?")
+print(f"Your bet : {user_bet}")
+red = turtle.Turtle()
+red.color("red")
+red.penup()
+red.shape("turtle")
+red.goto(-220,-70)
+green = turtle.Turtle()
+green.color("green")
+green.penup()
+green.shape("turtle")
+green.goto(-220,-40)
+blue = turtle.Turtle()
+blue.color("blue")
+blue.penup()
+blue.shape("turtle")
+blue.goto(-220,-10)
+yellow = turtle.Turtle()
+yellow.color("yellow")
+yellow.shape("turtle")
+yellow.penup()
+yellow.goto(-220,20)
+orange = turtle.Turtle()
+orange.color("orange")
+orange.penup()
+orange.shape("turtle")
+orange.goto(-220,50)
+purple = turtle.Turtle()
+purple.color("purple")
+purple.penup()
+purple.shape("turtle")
+purple.goto(-220,80)
+win=0
+list = [1,2,3,4,5,6,7,8,9,10]
+while win==0:
+    red.speed(random.randint(0,10))
+    green.speed(random.randint(0, 10))
+    blue.speed(random.randint(0,10))
+    yellow.speed(random.randint(0,10))
+    orange.speed(random.randint(0, 10))
+    purple.speed(random.randint(0, 10))
+    red.forward(random.choice(list))
+    green.forward(random.choice(list))
+    blue.forward(random.choice(list))
+    yellow.forward(random.choice(list))
+    orange.forward(random.choice(list))
+    purple.forward(random.choice(list))
+    if red.xcor()>=220 or green.xcor()>=220 or blue.xcor()>=220 or yellow.xcor()>=220 or orange.xcor()>=220 or purple.xcor()>=220:
+        win=1
+        break
+winner_list = [red.xcor(),green.xcor(),blue.xcor(),yellow.xcor(),orange.xcor(),purple.xcor()]
+highest=0
+for i in winner_list:
+    if i>highest:
+        highest=i
+if red.xcor()==highest:
+    winner = "red"
+elif green.xcor()==highest:
+    winner = "green"
+elif blue.xcor()==highest:
+    winner = "blue"
+elif yellow.xcor()==highest:
+    winner = "yellow"
+elif orange.xcor()==highest:
+    winner = "orange"
+elif purple.xcor()==highest:
+    winner = "purple"
+
+if winner == user_bet:
+    print(f"Congratulations your prediction was right! {winner.capitalize()} have won the match")
+else:
+    print(f"YOU LOOSE! {winner.capitalize()} won the match:)")
+
+
+screen.exitonclick()
