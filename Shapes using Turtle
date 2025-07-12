@@ -1,0 +1,18 @@
+import turtle
+
+ammalu = turtle.Turtle()
+ammalu.color("black")
+ammalu.speed(5)
+ammalu.penup()
+ammalu.sety(100)
+ammalu.pendown()
+num_of_sides = 10
+
+for number in range(3,num_of_sides+1):
+    angle = 360 / number
+    for num in range(number):
+        ammalu.forward(100)
+        ammalu.right(angle)
+
+screen = turtle.Screen()
+screen.exitonclick()
