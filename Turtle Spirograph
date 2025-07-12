@@ -1,0 +1,20 @@
+import turtle
+import random
+ammalu = turtle.Turtle()
+ammalu.speed(2)
+turtle.colormode(255)
+screen = turtle.Screen()
+screen.bgcolor("black")
+def random_colour():
+     r = random.randint(0,255)
+     g = random.randint(0,255)
+     b = random.randint(0,255)
+     random_tuple = (r,g,b)
+     return random_tuple
+
+for r in range(72):
+    ammalu.color(random_colour())
+    ammalu.circle(100)
+    ammalu.right(5)
+
+screen.exitonclick()
