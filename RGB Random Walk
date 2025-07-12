@@ -1,0 +1,35 @@
+import turtle
+import random
+ammalu = turtle.Turtle()
+ammalu.color("black")
+ammalu.speed(1000)
+ammalu.pensize(10)
+turtle.colormode(255)
+
+def random_colour():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    colour_tuple = (r,g,b)
+    return colour_tuple
+
+directions = ["north" , "east" , "west" , "south"]
+screen = turtle.Screen()
+screen.screensize(1000,1000,"black")
+for _ in range(1000):
+    random_c = random_colour()
+    ammalu.color(random_c)
+    random_direction = random.choice(directions)
+    if random_direction == "north":
+        ammalu.right(270)
+        ammalu.forward(30)
+    elif random_direction == "east":
+        ammalu.forward(30)
+    elif random_direction == "south":
+        ammalu.right(90)
+        ammalu.forward(30)
+    elif random_direction == "west":
+        ammalu.right(180)
+        ammalu.forward(30)
+
+screen.exitonclick()
