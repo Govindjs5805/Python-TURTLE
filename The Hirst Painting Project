@@ -1,0 +1,24 @@
+import turtle
+import random
+ammalu = turtle.Turtle()
+turtle.colormode(255)
+ammalu.speed(2)
+color_list = [(39, 131, 87), (164, 212, 166), (28, 170, 205), (247, 168, 147), (14, 97, 101), (12, 76, 65), (233, 75, 48), (102, 110, 180), (236, 230, 179), (133, 211, 235), (236, 230, 179), (239, 194, 213), (215, 61, 112), (122, 84, 67), (247, 168, 147), (56, 96, 152), (164, 212, 166), (163, 179, 55), (108, 168, 207), (102, 110, 180), (110, 194, 148), (233, 75, 48), (164, 212, 166), (20, 99, 71), (211, 231, 222), (12, 76, 65), (164, 212, 166), (233, 75, 48), (138, 26, 84), (223, 151, 71)]
+
+xis = -220
+yis = -220
+
+for j in range(10):
+
+    if j==0:
+        ammalu.teleport(xis,yis)
+    for i in range(10):
+        random_num = random.randint(0,12)
+        ammalu.dot(20,color_list[random_num])
+        ammalu.penup()
+        ammalu.forward(50)
+    yis+=50
+    ammalu.teleport(xis,yis)
+
+screen = turtle.Screen()
+screen.exitonclick()
