@@ -1,0 +1,13 @@
+import random
+import colorgram
+colours = colorgram.extract("image2.jpg",30)
+list = []
+for i in range(30):
+    num = random.randint(0,29)
+    random_colour = colours[num]
+    r = random_colour.rgb.r
+    g = random_colour.rgb.g
+    b = random_colour.rgb.b
+    tuple = (r,g,b)
+    list.append(tuple)
+print(list)
