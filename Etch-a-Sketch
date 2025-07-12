@@ -1,0 +1,24 @@
+import turtle
+ammalu = turtle.Turtle()
+screen = turtle.Screen()
+def forward():
+    ammalu.forward(20)
+def right():
+    ammalu.right(10)
+def left():
+    ammalu.right(-10)
+def back():
+    ammalu.backward(20)
+def clear():
+    ammalu.clear()
+    ammalu.tiltangle(0)
+    ammalu.reset()
+screen.listen()
+screen.onkey(key="w",fun=forward)
+screen.onkey(key="d",fun=right)
+screen.onkey(key="a",fun=left)
+screen.onkey(key="s",fun=back)
+screen.onkey(key="c",fun=clear)
+
+screen.exitonclick()
+
